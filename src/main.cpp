@@ -69,11 +69,9 @@ void loop() {
         if (!strcmp(buf, "TESTBREAK")) {
             // Atlast BREAK signal
             atlastKill(false);
-            Serial.print("DEBUG: Test break done.\n");
         } else if (!strcmp(buf, "TESTKILL")) {
             // Restart Atlast task
             atlastKill(true);
-            Serial.print("DEBUG: Test kill done.\n");
         } else {
             // Give command to Atlast
             atlastCommand(buf);
@@ -83,7 +81,6 @@ void loop() {
     // Write Atlast output to UART
     if (atlastOutputAvailable())
     {
-        Serial.print("DEBUG: Output available.\n");
         Serial.print(atlastOutput().c_str());
     }
 }
