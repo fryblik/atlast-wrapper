@@ -4,6 +4,7 @@
  */
 
 #include "atlast-1.2-esp32/atlast.h"
+#include "atlast-prims.h"
 #include "atlast-wrapper.h"
 
 
@@ -174,8 +175,8 @@ void atlastInit() {
     // Need to explicitly initialize ATLAST before extending dictionary
     atl_init();
 
-    // TODO: Extend ATLAST dictionary with custom word definitions
-    //atlastAddPrims();
+    // Extend ATLAST dictionary with custom word definitions
+    atlastAddPrims();
 
     // Create ATLAST interpreter task
     atlastCreateTask();
